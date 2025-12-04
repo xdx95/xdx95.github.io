@@ -1,104 +1,156 @@
 ###########################################################
 ### Welcome to Beautiful Jekyll!
+### 完整配置说明：适配 xdx95.github.io，仅需替换标注「需替换」的内容
 ###########################################################
 
 ############################
-# --- Required options --- #
+# --- 核心必填配置（必须保留） --- #
 ############################
 
+# 博客标题（页面顶部/浏览器标签显示）
 title: 秋刀鱼梦
+
+# 页脚显示的作者名
 author: 秋刀鱼梦
+
+# 博客根URL（固定格式，无需修改）
 url: https://xdx95.github.io
 
 ###############################################
-# --- List of links in the navigation bar --- #
+# --- 导航栏配置（已修正语法/路径，无错误） --- #
 ###############################################
 
 navbar-links:
-  关于我: "about"
-  我的博客: "/"
-  我的GitHub: "https://github.com/xdx95"
+  首页: "/"                 # 博客首页（固定值）
+  关于我: "about"           # 对应仓库内 about.md 文件
+  我的博客: "/posts"        # 文章列表页（自动生成，无需创建文件）
+  技术资源:
+    - 我的GitHub: "https://github.com/xdx95" # 外部链接（完整URL）
+    - 学习笔记: "notes"     # 对应仓库内 notes.md 文件
+
+# 允许二级导航菜单完整显示（避免文字截断）
+navbar-var-length: true
 
 ################
-# --- Logo --- #
+# --- 头像/Logo配置 --- #
 ################
 
+# 头像路径（需替换：将头像图片放在仓库 assets/img/ 下，修改文件名）
 avatar: "/assets/img/avatar.png"
+
+# 头像是否显示为圆形（true=圆形，false=方形）
 round-avatar: true
 
+# 若想用图片代替标题（可选，注释掉title后启用）
+# title-img: /assets/img/blog-logo.png
+
 #####################################
-# --- Footer social media links --- #
+# --- 页脚社交链接配置 --- #
 #####################################
 
 social-network-links:
-  rss: true
-  github: xdx95
-rss-description: 秋刀鱼梦的技术博客
+  rss: true  # 开启RSS订阅（自动生成 feed.xml）
+  github: xdx95  # GitHub用户名（无需填完整URL）
+  # 以下为可选社交链接，取消注释并替换值即可启用
+  # email: your-email@example.com  # 需替换：你的邮箱
+  # zhihu: your-zhihu-id           # 需替换：知乎ID
+  # linkedin: your-linkedin-id     # 需替换：领英ID
+
+# RSS订阅描述（配合rss: true使用）
+rss-description: 秋刀鱼梦的技术博客，分享编程、密码学、GitHub Pages相关笔记
 
 ###########################
-# --- General options --- #
+# --- 通用功能配置 --- #
 ###########################
 
+# 文章分享按钮（国内场景关闭无用平台）
 share-links-active:
   twitter: false
   facebook: false
   linkedin: false
 
+# 页脚显示的博客域名（固定值）
 url-pretty: "xdx95.github.io"
+
+# 所有页面标题前显示博客名（增强辨识度）
 title-on-all-pages: true
+
+# 文章摘要长度（首页显示的正文预览字数）
 excerpt_length: 50
+
+# 首页显示文章摘要/标签（开启）
 feed_show_excerpt: true
 feed_show_tags: true
+
+# 开启导航栏搜索按钮（新手友好）
 post_search: true
+
+# 开启页脚「编辑本页」按钮（GitHub仓库直接编辑）
 edit_page_button: true
-keywords: "秋刀鱼梦, 技术博客"
+
+# SEO关键词（利于搜索引擎收录）
+keywords: "秋刀鱼梦, 技术博客, 编程, GitHub Pages, Jekyll, 密码学, 开发笔记"
 
 ######################################
-# --- Colours / background image --- #
+# --- 外观颜色配置（清爽技术风） --- #
 ######################################
 
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+page-col: "#FFFFFF"          # 页面背景色
+text-col: "#404040"          # 正文文字色
+link-col: "#0066CC"          # 链接颜色（深蓝，更适配中文场景）
+hover-col: "#004499"         # 链接悬浮色
+navbar-col: "#EAEAEA"        # 导航栏背景色
+navbar-text-col: "#404040"   # 导航栏文字色
+navbar-border-col: "#DDDDDD" # 导航栏边框色
+footer-col: "#EAEAEA"        # 页脚背景色
+footer-text-col: "#777777"   # 页脚文字色
+footer-link-col: "#404040"   # 页脚链接色
+footer-hover-col: "#004499"  # 页脚链接悬浮色
+
+# 移动端浏览器主题色（可选）
+mobile-theme-col: "#0066CC"
 
 #################################
-# --- Web Analytics Section --- #
+# --- 网站统计（可选，需替换） --- #
 #################################
 
-# gtag: "G-XXXXXXXXXX" # 新手先注释，后续配置
+# Google Analytics（GA4）统计ID（需替换：你的G-开头ID，新手可注释）
+# gtag: "G-XXXXXXXXXX"
+
+# Cloudflare Analytics（新手可注释）
+# cloudflare_analytics: ""
 
 ####################
-# --- Comments --- #
+# --- 评论功能（已配置Utterances） --- #
 ####################
 
+# Utterances评论（基于GitHub Issues，无需第三方注册）
 utterances:
-  repository: "xdx95/xdx95.github.io"
-  issue-term: title
-  theme: github-light
-  label: blog-comments
+  repository: "xdx95/xdx95.github.io"  # 固定值，无需修改
+  issue-term: title                     # 按文章标题关联Issues
+  theme: github-light                   # 浅色主题（github-dark为暗色）
+  label: blog-comments                  # Issues标签（自定义）
 
 ################
-# --- Misc --- #
+# --- 杂项配置 --- #
 ################
 
+# 日期格式（英文月份，如 December 4, 2025）
 date_format: "%B %-d, %Y"
+
+# 时区（必须为上海时区，避免时间偏移）
 timezone: "Asia/Shanghai"
+
+# Jekyll核心配置（无需修改）
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
+paginate: 5  # 首页每页显示5篇文章
 
 kramdown:
-  input: GFM
+  input: GFM  # 支持GitHub Flavored Markdown
 
+# 默认页面布局（无需修改）
 defaults:
   -
     scope:
@@ -106,14 +158,15 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true
-      social-share: true
+      comments: true  # 所有文章开启评论
+      social-share: false # 关闭文章分享（国内无用）
   -
     scope:
-      path: ""
+      path: "" # 非文章页面默认用page布局
     values:
       layout: "page"
 
+# 排除无需部署的文件（无需修改）
 exclude:
   - CHANGELOG.md
   - CNAME
@@ -124,6 +177,11 @@ exclude:
   - screenshot.png
   - docs/
 
+# GitHub Pages兼容插件（必须保留）
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+
+# 主题标识（无需修改）
+# Beautiful Jekyll / Dean Attali
+# 2fc73a3a967e97599c9763d05e564189
